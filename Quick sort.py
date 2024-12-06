@@ -1,23 +1,17 @@
-# quick sort
-# pivot seçir və elementləri pivota görə kiçik və böyük qruplara ayırır
+def quick_sort(arr):
+    # Əgər massivdə 1 və ya daha az element varsa, artıq sıralıdır
+    if len(arr) <= 1:
+        return arr
+    else:
+        # Pivot seçirik (bu nümunədə sonuncu elementi pivot olaraq götürürük)
+        pivot = arr[-1]
+        left = [x for x in arr[:-1] if x <= pivot]  # Pivotdan kiçik və bərabər olan elementlər
+        right = [x for x in arr[:-1] if x > pivot]   # Pivotdan böyük olan elementlər
+        
+        # Sol və sağ tərəfləri təkrarlayaraq sıralama prosesini bitiririk
+        return quick_sort(left) + [pivot] + quick_sort(right)
 
-lst = [38, 27, 43, 3, 9, 82, 10]
-
-stack = [lst]
-sorted_list = []
-while stack:
-    sublist = stack.pop()
-
-    if len(sublist) <= 1:
-        sorted_list += sublist
-        continue
-
-    pivot = sublist[0]
-    less = [x for x in sublist[1:] if x <= pivot]
-    greater = [x for x in sublist[1:] if x > pivot]
-
-    stack.append(greater)
-    stack.append([pivot])
-    stack.append(less)
-
-print(sorted_list)
+# Nümunə üçün massiv
+arr = [12, 4, 7, 9, 3, 5, 6, 2, 8, 1]
+sorted_arr = quick_sort(arr)
+print("Sıralanmış massiv:", sorted_arr)
