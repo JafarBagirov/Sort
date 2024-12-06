@@ -3,7 +3,6 @@
 def merge_sort(lst):
     if len(lst) <= 1:
         return lst  # Əsas hal: tək elementli siyahı artıq sıralıdır.
-
     mid = len(lst) // 2
     left = merge_sort(lst[:mid])  # Sol hissəni rekursiv sırala.
     right = merge_sort(lst[mid:])  # Sağ hissəni rekursiv sırala.
@@ -27,6 +26,6 @@ def merge(left, right):
     merged += right[j:]
     return merged
 
-lst = [5, 8, 9, 1, 3, 5, 6, 2, 55, 66, 222, 3, 25, 6, 15, 3, 344, 92, 315, 15, 23, 9]
+lst = [38, 27, 43, 3, 9, 82, 10]
 sorted_lst = merge_sort(lst)
 print(sorted_lst)
