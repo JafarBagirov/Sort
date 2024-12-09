@@ -22,3 +22,4 @@ def linear_sieve(n):
 n = 30
 primes = linear_sieve(n)
 print(f"Asallar: {primes}")
+ 
