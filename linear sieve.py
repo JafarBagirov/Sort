@@ -19,7 +19,7 @@ def linear_sieve(n):
     return primes
 
 # Nümunə istifadəsi:
-n = 30
+n = int(input())
 primes = linear_sieve(n)
 print(f"Asallar: {primes}")
  
